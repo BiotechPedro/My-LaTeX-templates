@@ -1,0 +1,221 @@
+\documentclass{beamer}
+    \usetheme{Warsaw}
+    \usecolortheme[RGB={42,136,230}]{structure}
+    %%% {243,68,15}
+    %%% {rose}
+    \usefonttheme{structuresmallcapsserif}
+    %%% {structurebold}
+\usepackage[utf8]{inputenc}
+
+\title{\LaTeX ~ presentations}
+%%% title[abbr.]{}
+\author[Sánchez]{Pedro Sánchez}
+%%% \author[abbr.]{a\inst{1} \and b\inst{2}}
+%%% \institute[Universities of A and B]{\inst{1}Department\\University of A \and \inst{2} \\ }
+\date{\today}
+%%% \date[abbr.]{}
+%%% \titlegraphic[abbr.]{}
+%%% \logo{\includegraphics{}}
+
+\setbeamercovered{transparent}
+%%% \setbeamercovered{invisible}
+
+%%% %%% Automation for step-by-step visualization %%% %%%
+%%% \beamerdefaultoverlayspecification{<+-| alert@+>}
+
+\setbeamertemplate{navigation symbols}{}
+%%% options: {}, [default], [vertical], [only frame symbol]
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+%%% \setbeamertemplate{blocks}[default]
+
+\setbeamertemplate{items}[circle]
+%%% options: circle, ball, square
+
+%%% %%% Current section slides %%% %%%
+%%% \AtBeginSection
+%%% {
+%%% \begin{frame}<beamer>
+%%%     \frametitle{Outline}
+%%%     \tableofcontents[currentsection]
+%%% \end{frame}
+%%% or
+%%% \begin{frame}
+%%%     \begin{structureenv}
+%%%         \Large \thesection\\
+%%%         rule[-.6cm]{2pt}{1.5cm}
+%%%         \insertsection
+%%%     \end{structureenv}
+%%% \end{frame}
+%%% }
+
+
+
+
+\begin{document}
+
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}
+    \tableofcontents[hideallsubsections]
+    %%% \tableofcontents[pausesections]
+\end{frame}
+
+
+\section{Introduction}
+%%% \subsection{}
+%%% \subsubsection{}
+
+
+\begin{frame}
+\frametitle{Primera transp.}
+%%% \framesubtitle{}
+
+%%% %%% Block %%% %%%
+%%% \begin{block}{name}
+%%% text
+%%% \end{block}
+%%% options: block, alertblock, exampleblock, theorem, corollary, proof(need to name the header), definition, definitions, fact, example, examples
+
+%%% %%% Text inside a box %%% %%%
+%%% \fbox{}
+%%% \frame{}
+%%% \setbeamercolor{name}{fg= font colour,bg= background colour} | if not set: colour = colortheme
+%%% \begin{beamercolorbox}[sep=1em, wd=2cm, center, rounded=true, shadow=true]{name}
+%%% text
+%%% \end{beamercolorbox}
+
+%%% %%% Columns %%% %%%
+%%% \begin{columns}
+%%% \column{.5\textwidth}
+%%% {First column text}
+%%% \column{.5\textwidth}
+%%% \framebox[\textwidth]{
+%%% Second column text
+%%% }
+%%% \end{columns}
+
+%%% %%%  Basic overlays %%% %%%
+%%% \begin{itemize}
+%%% \item A \pause
+%%% \item B \pause
+%%% \item C
+%%% \end{itemize}
+%%% options: itemize, enumerate, description
+
+%%% %%% Fancy overlays %%% %%%
+%%% \begin{itemize}
+%%%     \item<1-> A
+%%%     \item<2-> B
+%%%     \item<3-> C
+%%% or
+%%%     \item<1-> A
+%%%     \item<3-> C
+%%%     \item<2-4> B
+%%% or other combinations
+%%%     \item<1-> \alert<4>{A}
+%%%     \item<3-> \alert<5>{C}
+%%%     \item<2-4> \alert<6>{B}
+%%% \end{itemize}
+%%% or (robust to modifications)
+%%% \begin{itemize}[<+-| alert@+>]
+%%% \item Uno
+%%% \item Dos
+%%% \item Tres
+%%% \item Cuatro
+%%% and can include images
+%%% \item 
+%%% \begin{center}
+%%%     \begin{tikzpicture}
+%%%     \alt<5->
+%%%     {\node[opacity=1]
+%%%         {\includegraphics{}};}
+%%%     {\node[opacity=.15]
+%%%         {\includegraphics{}};}
+%%%     \end{tikzpicture}
+%%% \end{center}
+%%% \end{itemize}
+
+%%% %%% Dynamic overlays %%% %%%
+%%% \begin{itemize}[<+->]
+%%% \item A
+%%% \item B
+%%%     \begin{center}
+%%%         \begin{overlayarea}{width}{height}
+%%%             \only<+>{B1}
+%%%             \only<+>{B2}
+%%%             %\only<+>{\includegraphics{fig}}
+%%%             \visible<5->{Fixed text}
+%%%         \end{overlayarea}
+%%%     \end{center}
+%%% \begin{center}
+%%%     \item<5-> \visibleP
+%%% \end{center}
+%%% \item C
+%%% \end{itemize}
+
+%%% %%% Also interesting %%% %%%
+%%% %%% framezoom %%% %%%
+%%% %%% multimedia::movie %%% %%%
+%%% %%% movie15::includemovie %%% %%%
+
+
+%%% %%% Alternate colors in tables %%% %%%
+%%% \documentclass[xcolor=dvipsnames,table]{beamer}
+%%% ...
+%%% \rowcolors{2}{RoyalBlue!5}{RoyalBlue!20}
+%%% \begin{tabular}{rll} \hline
+%%% X1 & X2 \\ \hline
+%%% 1 & A \\
+%%% 2 & B \\
+%%% 3 & C \\
+%%% \ldots & \ldots \\ \hline
+%%% \end{tabular}
+
+
+text
+
+
+\end{frame}
+
+
+%%% %%% Leap %%% %%%
+%%% \begin{frame}[label= example]{Hyperlinks}
+%%%     \hyperlink<# slide>{example<# slide of destination>}{\beamerbutton{Skip to example}}
+%%% options: \beamerbuttom, \beamergotobuttom, \beamerskipbuttom, \beamerreturnbuttom, {[only text]}
+%%% or predefined leaps
+%%% \hyperlinkpresentationstart, \hyperlinkpresentationend, \hyperlinkframestartnext, \hyperlinkframeendprev
+%%% or returning to a non-printed overlay
+%%% \begin{frame}<1-2>[label=name]
+%%%     \begin{enumerate}<+-| alert@+>
+%%%         \item A
+%%%         \item B
+%%%         \item C
+%%%     \end{enumerate}
+%%% \end{frame}
+%%% \begin{frame}
+%%% text
+%%% \end{frame}
+%%% \againframe<3>{name}
+
+
+%%% %%% Text in the environment \ver+vervatim+ do not interpret any LaTex command %%% %%%
+%%% \begin{frame}[fragile]
+%%% \frametitle{}
+%%% \begin{verbatim}
+%%% %%% \begin{semiverbatim}
+%%% 10 PRINT "HELLO WORLD";
+%%% 20 GOTO 10
+%%% \end{verbatim}
+%%% \end{frame}
+%%% options: fragile, plain (raw frame, no design), c (center)|b (bottom)| t(top)
+
+
+
+
+\end{document}
+
